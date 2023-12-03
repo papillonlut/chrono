@@ -1,0 +1,46 @@
+body {
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+}
+.navbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.navbar nav ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+.content {
+    margin-top: 60px; /* Ajoute une marge supérieure pour éviter que le contenu soit masqué */
+}  
+#timer {
+    font-size: 48px;
+    margin-top: 20px;
+}
+#congrat {
+    font-size: 48px;
+    margin-top: 20px;
+}
+#discordUsername {
+    font-size: 48px;
+    margin-top: 20px;
+}

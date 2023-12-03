@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="timestamp">Chronomètre</title>
+  <script>
+        function updateTimestamp() {
+            var timestamp = Date.now();
+    
+            var dateObject = new Date(timestamp);
+    
+            var hours = dateObject.getHours();
+            var minutes = dateObject.getMinutes();
+    
+            var timestampElement = document.getElementById('timestamp');
+            timestampElement.textContent = 'Il est ' + hours + 'h ' + minutes + 'm';
+        }
+    
+        updateTimestamp();
+        setInterval(updateTimestamp, 1000);
+    </script>
+  <link rel="icon" id="avatarContainer">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <a href="#accueil">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+      </ul>
+    </nav>
+  </header>
+  <main class="content">
+    <button onclick="onButtonClick()">Cliquez ici</button>
+    <p id="elapsedTime"></p>
+    
+    <script>
+        var clickTimestamp;
+    
+        function onButtonClick() {
+            // Enregistrez le timestamp actuel lors du clic
+            clickTimestamp = Date.now();
+    
+            // Mettez à jour le contenu du paragraphe
+            updateElapsedTime();
+        }
+    
+        function updateElapsedTime() {
+            // Vérifiez si un clic a eu lieu
+            if (clickTimestamp) {
+                // Obtenez le timestamp actuel
+                var currentTimestamp = Date.now();
+    
+                // Calculez la différence en secondes
+                var elapsedSeconds = Math.floor((currentTimestamp - clickTimestamp) / 1000);
+    
+                // Mettez à jour le contenu du paragraphe
+                var elapsedTimeElement = document.getElementById('elapsedTime');
+    
+                if (elapsedSeconds < 60) {
+                    elapsedTimeElement.textContent = 'Cliqué il y a ' + elapsedSeconds + ' sec';
+                } else {
+                    // Calculez le nombre de minutes
+                    var minutes = Math.floor(elapsedSeconds / 60);
+    
+                    // Mettez à jour le contenu en minutes
+                    elapsedTimeElement.textContent = 'Cliqué il y a ' + minutes + ' min';
+                }
+    
+                // Mettez à jour toutes les secondes
+                setTimeout(updateElapsedTime, 1000);
+    
+                // Cachez le contenu après 30 minutes (1800 secondes)
+                if (elapsedSeconds >= 1800) {
+                    elapsedTimeElement.textContent = '';
+                    clickTimestamp = null; // Réinitialisez le timestamp pour arrêter les mises à jour
+                }
+            }
+        }
+    </script>
+
+    <h1>Tu es ici depuis:</h1>
+    <div id="timer">00:00:00</div>
+    <div id="congrat"></div>
+    <div id="pseudo"></div>
+    <div id="email"></div>
+    <div id="msg"></div>
+    <button id="connexionDiscord" onclick="connectToDiscord()">Connecte-toi pour voir ton pseudo!</button>
+    <script>
+      function rediriger() {
+        var redirectUri = ('https%3A%2F%2Fthis-site-is-for-testing.netlify.app');
+        var authorizationUrl = 'https://discord.com/api/oauth2/authorize?client_id=1117872626220683366&redirect_uri=' + redirectUri + '&response_type=token&scope=identify';
+        window.location.href = authorizationUrl;
+      }
+      document.getElementById("connexionDiscord").addEventListener("click", rediriger);
+    </script>
+    <button id="sendButton" onclick="sendDataToDiscord()">Send</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
