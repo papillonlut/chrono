@@ -1,2 +1,6 @@
 # chrono
-découverte de l'animation avec javascript et de son impact sur le HTML et CSS
+Ici vous trouverez un site qui me permet de reprendre le code pour faire un décompte, etc...
+
+Rien de fou mais cela me facilite ;)
+
+C'est l'une de mes fierté ;)
