@@ -5,6 +5,13 @@
   <a href=""><img src="https://img.shields.io/badge/Made_with-%F0%9F%92%96-black?labelColor=%23ff007f&link=%23"/></a>
 </div>
 
+# Langage
+<div align="left">
+  <img alt="Static Badge" src="https://img.shields.io/badge/HTML-white?style=flat&logo=html5">
+  <img alt="Static Badge" src="https://img.shields.io/badge/CSS-blue?logo=css3">
+  <img alt="Static Badge" src="https://img.shields.io/badge/JavaScript-grey?style=flat&logo=javascript">
+</div>
+
 # Chrono
 Ici vous trouverez un site qui me permet de reprendre le code pour faire un décompte, etc...
 
