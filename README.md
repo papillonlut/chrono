@@ -17,4 +17,4 @@ Ici vous trouverez un site qui me permet de reprendre le code pour faire un déc
 
 Rien de fou mais cela me facilite ;)
 
-C'est l'une de mes fierté ;)
+C'est l'une de mes fiertés ;)
